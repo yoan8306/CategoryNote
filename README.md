@@ -3,6 +3,7 @@ Application IOS - Organize your notes.
 
 # CategorizeNote it’s my first application. 
 It’s for organize your notes. When you delete one category all notes associate will delete to.
+You can use branch Master for download project.
 
 ## Technologies
 - Xcode 12.4
