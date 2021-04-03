@@ -30,9 +30,11 @@ class CreateCategorieViewController: UIViewController {
         insertButon.layer.borderWidth = 1
     }
     private func saveNewCategory() {
-        guard let newCategoryText = newCategorieTextField.text?.capitalizingFirstLetter() else {
+        guard newCategorieTextField.text != ""  else {
+            presentAlert(alertTitle: "Erreur", alertMessage: "Veuillez renseigner une catégorie", buttonTitle: "Ok", alertStyle: .default)
             return
         }
+       let newCategoryText = newCategorieTextField.text?.capitalizingFirstLetter()
         let addCategory = Categorize(context: AppDelegate.viewContext)
         addCategory.title = newCategoryText
         newCategorieTextField.text = ""
@@ -40,8 +42,15 @@ class CreateCategorieViewController: UIViewController {
         category = Categorize.all
         listCategorieTable.reloadData()
     }
-
+    private func presentAlert (alertTitle title: String, alertMessage message: String,buttonTitle titleButton: String, alertStyle style: UIAlertAction.Style ) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: titleButton, style: style, handler: nil)
+        alertVC.addAction(action)
+        present(alertVC, animated: true, completion: nil)
+    }
 }
+
+
 
 
 extension CreateCategorieViewController: UITableViewDataSource {
