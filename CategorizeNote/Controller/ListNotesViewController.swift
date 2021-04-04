@@ -8,10 +8,13 @@
 import UIKit
 
 class ListNotesViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
     var notes = NoteData.all
     var note = NoteData ()
+    
+    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var detailNoteDataView: UIView!
     @IBOutlet weak var titleNoteDetail: UITextField!
     @IBOutlet weak var noteDescriptionTextView: UITextView!
@@ -22,10 +25,7 @@ class ListNotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notes = NoteData.all
-        detailNoteDataView.layer.cornerRadius = 30
-        titleNoteDetail.layer.cornerRadius = 30
-        noteDescriptionTextView.layer.cornerRadius = 30
-        // Do any additional setup after loading the view.
+        cornerRadiusElement()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,8 +33,15 @@ class ListNotesViewController: UIViewController {
         notes = NoteData.all
         tableView.reloadData()
     }
-    
+    private func cornerRadiusElement() {
+        detailNoteDataView.layer.cornerRadius = 30
+        titleNoteDetail.layer.cornerRadius = 30
+        noteDescriptionTextView.layer.cornerRadius = 30
+        saveButton.layer.cornerRadius = 30
+        cancelButton.layer.cornerRadius = 30
+    }
 }
+
 
 extension ListNotesViewController: UITableViewDataSource {
    

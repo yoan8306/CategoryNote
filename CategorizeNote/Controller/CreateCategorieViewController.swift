@@ -29,19 +29,39 @@ class CreateCategorieViewController: UIViewController {
         insertButon.layer.cornerRadius = 8
         insertButon.layer.borderWidth = 1
     }
+    
     private func saveNewCategory() {
-        guard newCategorieTextField.text != ""  else {
-            presentAlert(alertTitle: "Erreur", alertMessage: "Veuillez renseigner une catégorie", buttonTitle: "Ok", alertStyle: .default)
+        guard checkCategory() else {
             return
         }
-       let newCategoryText = newCategorieTextField.text?.capitalizingFirstLetter()
+        let newCategoryText = newCategorieTextField.text?.capitalizingFirstLetter()
+        let text = newCategoryText!.trimmingCharacters(in: .whitespaces)
+        
         let addCategory = Categorize(context: AppDelegate.viewContext)
-        addCategory.title = newCategoryText
+        addCategory.title = text
         newCategorieTextField.text = ""
         try! AppDelegate.viewContext.save()
         category = Categorize.all
         listCategorieTable.reloadData()
     }
+    
+    private func checkCategory () -> Bool {
+        let newCategoryText = newCategorieTextField.text?.capitalizingFirstLetter()
+       let text = newCategoryText!.trimmingCharacters(in: .whitespaces)
+        guard newCategorieTextField.text != "" else {
+            presentAlert(alertTitle: "Erreur", alertMessage: "Veuillez renseigner une catégorie", buttonTitle: "Ok", alertStyle: .default)
+            return false
+        }
+        
+     for double in category {
+         if double.title == text {
+                 presentAlert(alertTitle: "Erreur", alertMessage: "Cette catégorie existe déjà", buttonTitle: "Ok", alertStyle: .default)
+                 return false
+             }
+         }
+      return true
+     }
+   
     private func presentAlert (alertTitle title: String, alertMessage message: String,buttonTitle titleButton: String, alertStyle style: UIAlertAction.Style ) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: titleButton, style: style, handler: nil)

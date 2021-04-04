@@ -117,11 +117,11 @@
                                 </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="Ywu-Lb-OEi">
-                                <rect key="frame" x="50" y="100" width="300" height="300"/>
+                                <rect key="frame" x="50" y="100" width="300" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tne-Nk-0fC">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-uC-ssR">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
@@ -132,7 +132,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dUt-GH-obu">
-                                                <rect key="frame" x="0.0" y="40" width="300" height="200"/>
+                                                <rect key="frame" x="0.0" y="40" width="300" height="300"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -140,7 +140,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-Vs-RXZ">
-                                                <rect key="frame" x="0.0" y="240" width="300" height="60"/>
+                                                <rect key="frame" x="0.0" y="340" width="300" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="352-b4-bm7">
                                                         <rect key="frame" x="0.0" y="12" width="150" height="36"/>
@@ -196,8 +196,10 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="dbV-0c-MfJ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="Oe8-Cg-n3V" id="obc-9h-H2g"/>
                         <outlet property="detailNoteDataView" destination="Ywu-Lb-OEi" id="kfR-bN-5cy"/>
                         <outlet property="noteDescriptionTextView" destination="dUt-GH-obu" id="4EI-4y-QP0"/>
+                        <outlet property="saveButton" destination="352-b4-bm7" id="IxQ-u1-7dc"/>
                         <outlet property="tableView" destination="nAE-G1-6t0" id="aPr-x8-uuN"/>
                         <outlet property="titleNoteDetail" destination="tvH-uC-ssR" id="MgC-Jq-aSV"/>
                     </connections>

@@ -21,4 +21,6 @@ class Categorize: NSManagedObject {
         }
         return categorize
     }
+    
+    
 }
