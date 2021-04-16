@@ -13,9 +13,6 @@ class NoteCellTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBAction func noteButton() {
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

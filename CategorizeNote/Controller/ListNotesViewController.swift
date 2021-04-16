@@ -12,6 +12,7 @@ class ListNotesViewController: UIViewController {
     var note = NoteData ()
     
     
+   
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
