@@ -9,9 +9,7 @@ import UIKit
 
 class ListNotesViewController: UIViewController {
     var notes = NoteData.all
-    var note = NoteData ()
-    
-    
+    var note = NoteData()
    
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -20,26 +18,16 @@ class ListNotesViewController: UIViewController {
     @IBOutlet weak var titleNoteDetail: UITextField!
     @IBOutlet weak var noteDescriptionTextView: UITextView!
    
-    @IBAction func cancelButtonTapped() {
-        detailNoteDataView.isHidden = true
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         notes = NoteData.all
-        cornerRadiusElement()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
         notes = NoteData.all
         tableView.reloadData()
-    }
-    private func cornerRadiusElement() {
-        detailNoteDataView.layer.cornerRadius = 30
-        titleNoteDetail.layer.cornerRadius = 30
-        noteDescriptionTextView.layer.cornerRadius = 30
-        saveButton.layer.cornerRadius = 30
-        cancelButton.layer.cornerRadius = 30
     }
 }
 
@@ -79,28 +67,20 @@ extension ListNotesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let Cell = notes[indexPath.section][indexPath.row]
-        rowSelectedTapped(titleNote: Cell.title!, descriptionNote: Cell.noteDescription!)
+         note = notes[indexPath.section][indexPath.row]
+        performSegue(withIdentifier: "DetailNote", sender: self)
     }
     
-    private func rowSelectedTapped(titleNote: String, descriptionNote: String) {
-        detailNoteDataView.isHidden = false
-        detailNoteDataView.layer.cornerRadius = 30
-        titleNoteDetail.text = titleNote
-        noteDescriptionTextView.text = descriptionNote
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailNote" {
+            let noteSelectedVC = segue.destination as! DetailNoteViewController
+            noteSelectedVC.noteDetailSelected = note
+        }
     }
-    
-    
-    
 }
  
-
-
-
-
 extension ListNotesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexpath: IndexPath) {
-        
         if editingStyle == .delete {
             let commit = notes[indexpath.section][indexpath.row]
             AppDelegate.viewContext.delete(commit)

@@ -19,6 +19,7 @@
 		5F33B6DB260E83550007BB23 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33B6DA260E83550007BB23 /* NewNoteViewController.swift */; };
 		5F5BA2CD260FD19500514D89 /* CreateCategorieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BA2CC260FD19500514D89 /* CreateCategorieViewController.swift */; };
 		5F769B15260A95140029B624 /* ListNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F769B14260A95140029B624 /* ListNotesViewController.swift */; };
+		5FA07D5B264F0242003EE4E1 /* DetailNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA07D5A264F0242003EE4E1 /* DetailNoteViewController.swift */; };
 		5FA9167D26167A71009026B4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9167C26167A71009026B4 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		5F33B6DA260E83550007BB23 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		5F5BA2CC260FD19500514D89 /* CreateCategorieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategorieViewController.swift; sourceTree = "<group>"; };
 		5F769B14260A95140029B624 /* ListNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNotesViewController.swift; sourceTree = "<group>"; };
+		5FA07D5A264F0242003EE4E1 /* DetailNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteViewController.swift; sourceTree = "<group>"; };
 		5FA9167C26167A71009026B4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				5F33B6DA260E83550007BB23 /* NewNoteViewController.swift */,
 				5F769B14260A95140029B624 /* ListNotesViewController.swift */,
 				5F5BA2CC260FD19500514D89 /* CreateCategorieViewController.swift */,
+				5FA07D5A264F0242003EE4E1 /* DetailNoteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				5F1CC7322609FD2C002C2E28 /* CategorizeNote.xcdatamodeld in Sources */,
 				5F33B6DB260E83550007BB23 /* NewNoteViewController.swift in Sources */,
 				5F769B15260A95140029B624 /* ListNotesViewController.swift in Sources */,
+				5FA07D5B264F0242003EE4E1 /* DetailNoteViewController.swift in Sources */,
 				5F1CC72A2609FD2C002C2E28 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

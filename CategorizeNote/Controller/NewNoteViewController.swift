@@ -31,13 +31,11 @@ class NewNoteViewController: UIViewController, CategorizeChoice {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.newDescriptionField.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
            }
 
            @objc func tapDone(sender: Any) {
                self.view.endEditing(true)
-
     }
     
     private func save () {
