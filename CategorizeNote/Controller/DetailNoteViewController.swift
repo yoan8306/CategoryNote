@@ -18,6 +18,9 @@ class DetailNoteViewController: UIViewController {
     @IBAction func saveButton() {
         noteDetailSelected.noteDescription = noteDescriptionField.text
         noteDetailSelected.title = titleField.text
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        
         do {
             try AppDelegate.viewContext.save()
         } catch  {
