@@ -8,13 +8,13 @@
 import UIKit
 
 class NewNoteViewController: UIViewController, CategorizeChoice {
-    
+    var note = NoteData()
     @IBOutlet weak var categoryButton: UIButton!
     
     @IBAction func didPressCategoryButton() {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "CreateCategorieViewController") as? CreateCategorieViewController {
                     vc.delegate = self
-               self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
                 }
     }
     
@@ -22,7 +22,14 @@ class NewNoteViewController: UIViewController, CategorizeChoice {
     @IBOutlet weak var newDescriptionField: UITextView!
     
     @IBAction func saveButton() {
-        save()
+        let title = newTitleField.text
+        let description = newDescriptionField.text
+        let category = getCategorize()
+        if category != nil && title != "" && description != "" {
+            note.save(titleNote: title, descriptionNote: description, category: category)
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     func renameButton(categorizeName: String) {
@@ -38,25 +45,7 @@ class NewNoteViewController: UIViewController, CategorizeChoice {
                self.view.endEditing(true)
     }
     
-    private func save () {
-        guard let title = newTitleField.text, let description = newDescriptionField.text, let category = getCategorize()  else {
-            return }
-        
-        let addNote = NoteData(context: AppDelegate.viewContext)
-        let currentDate = Date()
-        addNote.title = title
-        addNote.noteDescription = description
-        addNote.dateTime = currentDate
-        addNote.categorize = category
-        newTitleField.text = ""
-        newDescriptionField.text = ""
-       do {
-            try AppDelegate.viewContext.save()
-            presentAlert(alertTitle: "", alertMessage: "La note à été ajouter à votre liste de note", buttonTitle: "Ok", alertStyle: .default)
-        } catch {
-            presentAlert(alertTitle: "Erreur", alertMessage: "La note n'as pas pu être ajoutée. /(n) Veuillez réessayez. Merci", buttonTitle: "Ok", alertStyle: .default)
-    }
-}
+    
     
     private func presentAlert (alertTitle title: String, alertMessage message: String,buttonTitle titleButton: String, alertStyle style: UIAlertAction.Style ) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -89,7 +78,7 @@ extension NewNoteViewController: UITextViewDelegate, UITextFieldDelegate {
     
   func textViewDidEndEditing(_ textView: UITextView) {
         if newDescriptionField.text.isEmpty {
-            newDescriptionField.text = "Descrption"
+            newDescriptionField.text = "Description"
             newDescriptionField.textColor = UIColor.lightGray
         }
     }
@@ -98,7 +87,7 @@ extension NewNoteViewController: UITextViewDelegate, UITextFieldDelegate {
         if newTitleField.isFirstResponder {
             newDescriptionField.becomeFirstResponder()
         } else {
-            save()
+            note.save(titleNote: newTitleField.text, descriptionNote: newDescriptionField.text, category: getCategorize())
             dismiss(animated: true, completion: nil)
         }
         return true

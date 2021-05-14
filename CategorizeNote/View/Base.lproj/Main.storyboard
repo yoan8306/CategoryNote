@@ -226,7 +226,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="202"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <state key="normal" title="Categorie   &gt;&gt;">
+                                        <state key="normal" title="Choisi une categorie   &gt;&gt;">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>

@@ -35,6 +35,24 @@ extension Array where Element == NoteData {
         }
         return result
     }
-    
+}
+
+extension NoteData {
+    func save (titleNote: String?, descriptionNote: String?, category: Categorize?) {
+        guard let title = titleNote, let description = descriptionNote, let category = category  else {
+            return }
+        
+        let addNote = NoteData(context: AppDelegate.viewContext)
+        let currentDate = Date()
+        addNote.title = title
+        addNote.noteDescription = description
+        addNote.dateTime = currentDate
+        addNote.categorize = category
+       
+       do {
+            try AppDelegate.viewContext.save()
+        } catch {
+    }
+}
 }
 
