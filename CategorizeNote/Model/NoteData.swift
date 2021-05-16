@@ -56,3 +56,16 @@ extension NoteData {
 }
 }
 
+extension NoteData {
+   
+    func serach (search: String) {
+         var result : [[NoteData]] {
+            let request :NSFetchRequest<NoteData> = NoteData.fetchRequest()
+            request.value(forUndefinedKey:search )
+            guard let result = try? AppDelegate.viewContext.fetch(request) else {
+                return []
+            }
+            return result.convertedToArrayofArray
+        }
+    }
+}

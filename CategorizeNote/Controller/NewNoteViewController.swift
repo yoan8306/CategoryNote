@@ -22,13 +22,14 @@ class NewNoteViewController: UIViewController, CategorizeChoice {
     @IBOutlet weak var newDescriptionField: UITextView!
     
     @IBAction func saveButton() {
-        let title = newTitleField.text
-        let description = newDescriptionField.text
-        let category = getCategorize()
-        if category != nil && title != "" && description != "" {
-            note.save(titleNote: title, descriptionNote: description, category: category)
+        if getCategorize() != nil  && newTitleField.text != "" && newDescriptionField.text != "" {
+            let title = newTitleField.text
+            let description = newDescriptionField.text
+            note.save(titleNote: title, descriptionNote: description, category: getCategorize())
             navigationController?.popViewController(animated: true)
             dismiss(animated: true, completion: nil)
+        } else {
+            presentAlert(alertTitle: "Error", alertMessage: "Veuillez sélectionner une catégorie ou verifier que les champs ne soient pas vide", buttonTitle: "OK", alertStyle: .cancel)
         }
     }
     
@@ -57,14 +58,16 @@ class NewNoteViewController: UIViewController, CategorizeChoice {
     
     private func getCategorize() -> Categorize? {
         let category = Categorize.all
+        var result = 0
      for stringCategory in category {
         if stringCategory.title == String(categoryButton.currentTitle!) {
-                return stringCategory
-        } else {
-            presentAlert(alertTitle: "Erreur", alertMessage: "Veuillez sélectionner une catégorie", buttonTitle: "Ok", alertStyle: .default)
+               result += 1
+            return stringCategory
         }
      }
+        if result <= 1 {
         return nil
+        }
     }
 }
 

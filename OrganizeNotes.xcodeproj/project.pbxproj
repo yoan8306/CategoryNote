@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F1CC7242609FD2C002C2E28 /* CategorizeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CategorizeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F1CC7242609FD2C002C2E28 /* OrganizeNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrganizeNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F1CC7272609FD2C002C2E28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F1CC7292609FD2C002C2E28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5F1CC72E2609FD2C002C2E28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		5F1CC7252609FD2C002C2E28 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F1CC7242609FD2C002C2E28 /* CategorizeNote.app */,
+				5F1CC7242609FD2C002C2E28 /* OrganizeNotes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,9 +126,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F1CC7232609FD2C002C2E28 /* CategorizeNote */ = {
+		5F1CC7232609FD2C002C2E28 /* OrganizeNotes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F1CC73B2609FD2E002C2E28 /* Build configuration list for PBXNativeTarget "CategorizeNote" */;
+			buildConfigurationList = 5F1CC73B2609FD2E002C2E28 /* Build configuration list for PBXNativeTarget "OrganizeNotes" */;
 			buildPhases = (
 				5F1CC7202609FD2C002C2E28 /* Sources */,
 				5F1CC7212609FD2C002C2E28 /* Frameworks */,
@@ -138,9 +138,9 @@
 			);
 			dependencies = (
 			);
-			name = CategorizeNote;
+			name = OrganizeNotes;
 			productName = CategorizeNote;
-			productReference = 5F1CC7242609FD2C002C2E28 /* CategorizeNote.app */;
+			productReference = 5F1CC7242609FD2C002C2E28 /* OrganizeNotes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -157,7 +157,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F1CC71F2609FD2C002C2E28 /* Build configuration list for PBXProject "CategorizeNote" */;
+			buildConfigurationList = 5F1CC71F2609FD2C002C2E28 /* Build configuration list for PBXProject "OrganizeNotes" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -170,7 +170,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F1CC7232609FD2C002C2E28 /* CategorizeNote */,
+				5F1CC7232609FD2C002C2E28 /* OrganizeNotes */,
 			);
 		};
 /* End PBXProject section */
@@ -357,7 +357,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.-YoanSoussand.CategorizeNote";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.-YoanSoussand.OrganizeNotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -376,7 +376,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.-YoanSoussand.CategorizeNote";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.-YoanSoussand.OrganizeNotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,7 +386,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F1CC71F2609FD2C002C2E28 /* Build configuration list for PBXProject "CategorizeNote" */ = {
+		5F1CC71F2609FD2C002C2E28 /* Build configuration list for PBXProject "OrganizeNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F1CC7392609FD2E002C2E28 /* Debug */,
@@ -395,7 +395,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F1CC73B2609FD2E002C2E28 /* Build configuration list for PBXNativeTarget "CategorizeNote" */ = {
+		5F1CC73B2609FD2E002C2E28 /* Build configuration list for PBXNativeTarget "OrganizeNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F1CC73C2609FD2E002C2E28 /* Debug */,
