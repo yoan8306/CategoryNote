@@ -29,7 +29,7 @@ class DetailNoteViewController: UIViewController {
     }
     
     @IBAction func cancelButton() {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     

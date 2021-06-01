@@ -11,9 +11,8 @@ class ListNotesViewController: UIViewController {
     let notes = NoteData.all
     var filteringNotes = NoteData.all
     var note = NoteData()
+    var refreshControl = UIRefreshControl()
    
-   
-  
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var uISearchBarField: UISearchBar!
     
@@ -22,6 +21,15 @@ class ListNotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         filteringNotes = NoteData.all
+        refreshControl.attributedTitle = NSAttributedString(string: "pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        filteringNotes = NoteData.all
+        tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {

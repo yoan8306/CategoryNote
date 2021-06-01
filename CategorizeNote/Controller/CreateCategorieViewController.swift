@@ -10,6 +10,7 @@ import UIKit
 class CreateCategorieViewController: UIViewController {
     var delegate: CategorizeChoice?
     var category = Categorize.all
+    var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var listCategorieTable: UITableView!
     @IBOutlet weak var newCategorieTextField: UITextField!
@@ -23,6 +24,12 @@ class CreateCategorieViewController: UIViewController {
         super.viewDidLoad()
         category = Categorize.all
        drawInsertButton()
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        category = Categorize.all
+        listCategorieTable.reloadData()
+        refreshControl.endRefreshing()
     }
 
     private func drawInsertButton () {
